@@ -1,0 +1,53 @@
+<div class="">
+  <div class="card">
+    <div class="card-body">
+      <!--  <div class="card-body">
+         <div>
+           <input class="p-1"  type="text" [(ngModel)]="appState.productsState.keyword">
+           <button  (click)="searchProducts()"
+                    class="btn btn-outline-success ms-1">
+             <i class="bi bi-search"></i>
+           </button>
+         </div>
+      </div>-->
+      <table class="table table-bordered ">
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th>Category</th>
+          <th colspan="2" class="text-center">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let p of products ">
+          <td>{{p.title}}</td>
+          <td>{{p.price}}</td>
+          <td>{{p.stock}}</td>
+          <td>{{p.category}}</td>
+          <td>[DELETE]</td>
+          <td>[UPDATE]</td>
+
+
+        </tr>
+        </tbody>
+      </table>
+      <ul class="nav nav-pills">
+        <li *ngFor="let page of [].constructor(this.totalPages); let i = index">
+          <button
+            (click)="handleGotoPage(i + 1)"
+            [ngClass]="{
+        'btn-success': currentPage === (i + 1),
+        'btn-outline-success': currentPage !== (i + 1)
+      }"
+            class="btn m-1"
+          >
+            {{ i + 1 }}
+          </button>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

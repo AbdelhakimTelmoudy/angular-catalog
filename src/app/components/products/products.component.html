@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-body">
+    <ul class="nav justify-content-center my-1">
+      <li><a class="nav-item btn mx-2"
+             [ngClass]="{
+               'btn-info ': currentPath === '',
+               'btn-outline-info ': currentPath !== ''
+             }"
+             routerLink="/products/"
+      >List</a></li>
+      <li><a class="nav-item btn mx-2"
+             [ngClass]="{
+               'btn-info ': currentPath === 'ajouter',
+               'btn-outline-info ': currentPath !== 'ajouter'
+             }"
+             routerLink="/products/ajouter"
+      >Ajouter</a></li>
+      <li><a class="nav-item btn mx-2"
+             [ngClass]="{
+               'btn-info ': currentPath === 'modifier',
+               'btn-outline-info ': currentPath !== 'modifier'
+             }"
+             routerLink="/products/modifier"
+      >Modifier</a></li>
+    </ul>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
